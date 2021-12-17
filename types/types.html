@@ -14,8 +14,9 @@
 
         let object = null;
 
-        let x = undefined;
-        let y; // undefined
+        let x = 123;
+        let y = x;
+        y = 456; // only reassigned y, not pointing to memory location of x
 
         document.write(customerName + "<br/>");
         document.write(accountBalance + "<br/>");
