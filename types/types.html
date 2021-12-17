@@ -17,13 +17,17 @@
         let x = 123;
         let y = x;
         y = 456; // only reassigned y, not pointing to memory location of x
+        let s = "123";
 
         document.write(typeof customerName + "<br/>");
         document.write(typeof accountBalance + "<br/>");
         document.write(typeof isValid + "<br/>");
         document.write(typeof object + "<br/>"); // null type shows up as object
+        document.write(object === null); // compare value and data type
         document.write(typeof x + "<br/>");
         document.write(typeof y + "<br/>");
+        document.write(x == s); // compare value, ignore type
+        document.write(x === s); // strict equality
     </script>
 </body>
 </html>
