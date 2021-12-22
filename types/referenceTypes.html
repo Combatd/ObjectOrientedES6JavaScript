@@ -8,7 +8,11 @@
 </head>
 <body>
     <script>
-        
+        let obj1 = new Object();
+        let obj2 = obj1; // pointer to same memory location
+
+        obj1.myProperty = "All the power is within you.";
+        document.write(obj2.myProperty);
     </script>
 </body>
 </html>
