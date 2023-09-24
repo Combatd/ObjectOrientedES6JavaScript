@@ -9,6 +9,8 @@
 <body>
     
     <script>
+        document.write(evenOrOdd(10)); // function hoisting - engine pushes "function" keyword declaration to the top global scope
+
         function evenOrOdd(num) {
             if(num % 2 === 0) {
                 return "even";
@@ -17,8 +19,8 @@
             }
         }
 
-        document.write(evenOrOdd(10));
 
+        // document.write(evenOrOdd2(5)); // no function hoisting - the variable name is not known ahead of time so engine does not recognize it
         const evenOrOdd2 = function(num) {
             if(num % 2 === 0) {
                 return "even";
