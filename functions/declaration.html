@@ -12,12 +12,18 @@
         document.write(evenOrOdd(10)); // function hoisting - engine pushes "function" keyword declaration to the top global scope
 
         function evenOrOdd(num) {
+            document.write(arguments[1] + "<br/>") // array-like data structure of args
+            document.write(arguments.length + "<br/>");
+            document.write(evenOrOdd.length + "<br/>"); // number of named arguments
             if(num % 2 === 0) {
                 return "even";
             } else {
                 return "odd";
             }
         }
+
+        var e = evenOrOdd;
+        document.write(e(10, 20, 30, 40));
 
 
         // document.write(evenOrOdd2(5)); // no function hoisting - the variable name is not known ahead of time so engine does not recognize it
