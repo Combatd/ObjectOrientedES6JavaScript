@@ -11,3 +11,6 @@ course1.description = 'Master Java Project Development'; // [[Put]] New property
 
 console.log('name' in course1); // true
 console.log('description' in course2); // false
+
+console.log('toString' in course1); // true, Object instances always have toString method
+console.log(course1.hasOwnProperty('toString')); // false, for specific attribute
