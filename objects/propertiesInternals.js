@@ -15,5 +15,10 @@ console.log('description' in course2); // false
 console.log('toString' in course1); // true, Object instances always have toString method
 console.log(course1.hasOwnProperty('toString')); // false, for specific attribute
 
-delete course1.description; // return true if attribute is deleted
-console.log('description' in course1, ' description is not on course1'); // fa;se
+// delete course1.description; // return true if attribute is deleted
+// console.log('description' in course1, ' description is not on course1'); // false
+
+for (let eachProperty in course1) {
+  console.log(eachProperty);
+  console.log(course1[eachProperty]);
+}
