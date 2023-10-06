@@ -28,3 +28,7 @@ for (let i = 0; i < allProperties.length; i++) {
   console.log(allProperties[i]);
   console.log(course1[allProperties[i]] + ' lets for loop through all the values');
 }
+
+// Not all attributes are enumerable, built-in Object properties are often not enumerable
+console.log(course1.propertyIsEnumerable('name')); // true
+console.log(allProperties.propertyIsEnumerable('length')); // false
