@@ -17,4 +17,4 @@ console.log(creditCard.name);
 creditCard.name = 'Bob';
 console.log(creditCard.name);
 
-// getters and setters only need to be defined if there are special things happening liek calculations/logic
+// getters and setters only need to be defined if there are special things happening like calculations / logic
