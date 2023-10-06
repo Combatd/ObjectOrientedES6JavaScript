@@ -22,3 +22,9 @@ for (let eachProperty in course1) {
   console.log(eachProperty);
   console.log(course1[eachProperty]);
 }
+
+let allProperties = Object.keys(course1); // Class method to retrieve all the attributes
+for (let i = 0; i < allProperties.length; i++) {
+  console.log(allProperties[i]);
+  console.log(course1[allProperties[i]] + ' lets for loop through all the values');
+}
