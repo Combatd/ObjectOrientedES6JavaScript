@@ -10,6 +10,8 @@ function Flight(airlines, flightNumber) {
 // }
 
 Flight.prototype = {
+  constructor: Flight,
+
   display:  function() {
       console.log(this.airlines);
       console.log(this.flightNumber);
@@ -29,3 +31,6 @@ flight2.display();
 
 console.log(flight1.toString());
 console.log(flight2.toString());
+
+console.log(flight1 instanceof Flight); // => true
+console.log(flight1.constructor === Flight); // => will be false if not explicitly defined in prototype
