@@ -1,5 +1,8 @@
-let project = {
-  name: 'Road Work'
+let project1 = {
+  name: 'Road Work',
+  display: function() {
+    console.log(this.name);
+  }
 };
 
 // Object#hasOwnProperty prototypal inheritance
@@ -16,3 +19,16 @@ let expllicitCreatedObject = Object.create(Object.prototype, {
     writable: true
   }
 });
+
+// inheritance
+let project2 = Object.create(project1, {
+  name: {
+    configurable: true,
+    enumerable: true,
+    value: 'Bridge Work',
+    writable: true
+  }
+});
+
+project1.display();
+project2.display(); // inherited method
