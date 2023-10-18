@@ -21,3 +21,18 @@ Surgeon.prototype.constructor = Surgeon; // constructor method
 Surgeon.prototype.toString = function() {
   return `[Surgeon ${this.name} type ${this.type}]`
 }
+
+let doctor = new Doctor('John');
+let surgeon = new Surgeon('Bob', 'Dental');
+
+console.log(doctor.treat());
+console.log(surgeon.treat()); // inherited instance method
+
+console.log(doctor.toString());
+console.log(surgeon.toString()); // inherited instance method
+
+console.log(doctor instanceof Doctor); // => true
+console.log(doctor instanceof Object); // => true
+console.log(surgeon instanceof Doctor); // =. true
+console.log(surgeon instanceof Surgeon); // =. true
+console.log(surgeon instanceof Object); // =. true
