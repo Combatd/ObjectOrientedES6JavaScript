@@ -1,13 +1,23 @@
-function Doctor() {
-
+function Doctor(name) {
+  this.name = name;
 }
 
-// constructor functions will instantiate objects with these atttributes
-Doctor.prototype = Object.create(Object.prototype, {
-  constructor: {
-    configurable: true,
-    enumerable: true,
-    value: Doctor,
-    writable: true
-  }
-});
+Doctor.prototype.treat = function() {
+  return 'treated';
+}
+
+Doctor.prototype.toString = function() {
+  return `[Doctor ${this.name}]`;
+}
+
+function Surgeon(name, type) {
+  this.name = name;
+  this.type = type;
+}
+
+Surgeon.prototype = new Doctor(); // prototypal inheritance
+Surgeon.prototype.constructor = Surgeon; // constructor method
+
+Surgeon.prototype.toString = function() {
+  return `[Surgeon ${this.name} type ${this.type}]`
+}
