@@ -16,8 +16,22 @@ function Surgeon(name, type) {
   this.type = type;
 }
 
-Surgeon.prototype = new Doctor(); // prototypal inheritance
-Surgeon.prototype.constructor = Surgeon; // constructor method
+// Surgeon.prototype = new Doctor(); // prototypal inheritance
+// Surgeon.prototype.constructor = Surgeon; // constructor method
+
+Surgeon.prototype = Object.create(Doctor.prototype, {
+  constructor: {
+    configurable: true,
+    enumerable: true,
+    value: Surgeon,
+    writable: true
+  }
+})
+
+// Override parent #treat
+Surgeon.prototype.treat = function() {
+  return `${Doctor.prototype.treat.call(this)} + operated` // invoke parent method
+}
 
 Surgeon.prototype.toString = function() {
   return `[Surgeon ${this.name} type ${this.type}]`
