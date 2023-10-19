@@ -11,6 +11,7 @@ Doctor.prototype.toString = function() {
 }
 
 function Surgeon(name, type) {
+  Doctor.call(this, name); // invoke the parent's constructor
   this.name = name;
   this.type = type;
 }
