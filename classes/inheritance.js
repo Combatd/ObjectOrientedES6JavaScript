@@ -4,6 +4,14 @@ class BMW {
     this.model = model;
     this.year = year;
   }
+
+  start() {
+    console.log('start engine');
+  }
+
+  stop() {
+    console.log('stop engine');
+  }
 }
 
 class ThreeSeries extends BMW {
@@ -27,8 +35,12 @@ console.log(threeSeries.make);
 console.log(threeSeries.model);
 console.log(threeSeries.year);
 console.log(threeSeries.cruiseControlEnabled);
+console.log(threeSeries.start());
+console.log(threeSeries.stop());
 
 console.log(fiveSeries.make);
 console.log(fiveSeries.model);
 console.log(fiveSeries.year);
 console.log(fiveSeries.parkingAssistEnabled);
+console.log(fiveSeries.start());
+console.log(fiveSeries.stop());
