@@ -26,6 +26,11 @@ class FiveSeries extends BMW {
     super(make, model, year);
     this.parkingAssistEnabled = parkingAssistEnabled;
   }
+
+  // override parent method
+  start() {
+    console.log('Remote Start');
+  }
 }
 
 let threeSeries = new ThreeSeries('BMW', '328', 2018, true);
