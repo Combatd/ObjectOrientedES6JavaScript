@@ -1,8 +1,13 @@
 function myAsyncFunction() {
   let promise = new Promise((resolve, reject) => {
+    let error = false;
     setTimeout(() => {
       console.log('working asynchronously');
-      resolve();
+      if (error) {
+        reject();
+      } else {
+        resolve();
+      }
     }, 1000);
   });
 
@@ -10,6 +15,6 @@ function myAsyncFunction() {
 }
 
 myAsyncFunction().then(
-  () => console.log('Work Done')
-  
+  () => console.log('Work Done'),
+  () => console.log('Error')
 );
