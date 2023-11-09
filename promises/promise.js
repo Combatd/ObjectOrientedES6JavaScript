@@ -14,7 +14,12 @@ function myAsyncFunction() {
   return promise;
 }
 
+// myAsyncFunction().then(
+//   (success) => console.log(success),
+//   (error) => console.log(error)
+// );
+
 myAsyncFunction().then(
-  (success) => console.log(success),
-  (error) => console.log(error)
+  (success) => console.log(success)
+  .catch((error) => console.log(error))
 );
