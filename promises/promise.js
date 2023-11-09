@@ -4,9 +4,9 @@ function myAsyncFunction() {
     setTimeout(() => {
       console.log('working asynchronously');
       if (error) {
-        reject();
+        reject('Error');
       } else {
-        resolve();
+        resolve('Done');
       }
     }, 1000);
   });
@@ -15,6 +15,6 @@ function myAsyncFunction() {
 }
 
 myAsyncFunction().then(
-  () => console.log('Work Done'),
-  () => console.log('Error')
+  (success) => console.log(success),
+  (error) => console.log(error)
 );
