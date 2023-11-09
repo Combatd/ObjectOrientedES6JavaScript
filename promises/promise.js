@@ -8,3 +8,8 @@ function myAsyncFunction() {
 
   return promise;
 }
+
+myAsyncFunction().then(
+  () => console.log('Work Done')
+  
+);
